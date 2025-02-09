@@ -23,6 +23,10 @@ const withPWAConfig = withPWA({
 
 const nextConfig: NextConfig = {
   /* config options here */
+  experimental: {
+    optimizeCss: true,
+    disableOptimizedLoading: true,
+  },
 };
 
 export default withPWAConfig(nextConfig);
