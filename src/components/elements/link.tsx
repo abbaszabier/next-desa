@@ -73,13 +73,13 @@ export function Navlink() {
                   <Link href="/sejarah-desa" passHref>
                     <AuroraBackground className="h-[208px] cursor-pointer">
                       <motion.div
-                        initial={{ opacity: 0.0, y: 40 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{
-                          delay: 0.3,
-                          duration: 0.8,
-                          ease: "easeInOut",
-                        }}
+                        // initial={{ opacity: 0.0, y: 40 }}
+                        // whileInView={{ opacity: 1, y: 0 }}
+                        // transition={{
+                        //   delay: 0.3,
+                        //   duration: 0.8,
+                        //   ease: "easeInOut",
+                        // }}
                         className="cursor-pointer flex h-full w-full select-none flex-col justify-end rounded-md p-6 no-underline outline-none focus:shadow-md"
                       >
                         <div className="mb-2 mt-4 text-lg font-medium leading-none dark:text-white">
@@ -185,7 +185,7 @@ const ListItem = React.forwardRef<
         <a
           ref={ref}
           className={cn(
-            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-zinc-50 hover:text-accent-foreground focus:bg-zinc-50 focus:text-accent-foreground",
             className
           )}
           {...props}
