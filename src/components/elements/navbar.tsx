@@ -47,7 +47,7 @@ export default function Navbar() {
       </nav>
 
       <nav
-        className="sticky top-0 z-50 w-full px-12 py-1 shadow-md bg-white/50 backdrop-blur-md dark:bg-black/50 dark:bg-opacity-80
+        className="sticky top-0 z-50 w-full px-12 py-1 shadow bg-white/50 backdrop-blur-md dark:bg-black/50 dark:bg-opacity-80
       dark:border-b dark:border-gray-700 dark:shadow-lg hidden lg:block"
       >
         <Navlink />
