@@ -2,8 +2,8 @@ import React from "react";
 
 export default function Hero() {
   return (
-    <div className="relative isolate py-32 px-6 lg:px-8">
-      <div className="mx-auto max-w-2xl">
+    <div className="relative isolate py-28 px-6 lg:px-8">
+      <div className="mx-auto px-8 md:px-0 max-w-2xl">
         <div className="mb-8 flex justify-center">
           <div className="relative rounded-full px-3 py-1 text-sm/6 text-gray-500 bg-white/30 backdrop-blur-xl dark:bg-black/50 dark:bg-opacity-80 ring-1 ring-gray-900/10 hover:ring-gray-900/20 dark:ring-gray-100/10 dark:hover:ring-gray-100/20">
             Selamat datang di{" "}
@@ -17,9 +17,9 @@ export default function Hero() {
             Layanan Informasi Desa{" "}
             <span className="font-semibold text-indigo-600">Tapos I</span>{" "}
           </h1>
-          <p className="mt-6 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8">
-            Satu Pintu untuk Mengakses Informasi, Layanan, dan Berita Terkini
-            dari Desa Tapos I, Kecamatan Tenjolaya, Kabupaten Bogor.
+          <p className="mt-6 text-md font-medium text-pretty text-gray-500 md:text-xl/8">
+            Satu Pintu untuk Mengakses Layanan Informasi dan Berita Terkini dari
+            Desa Tapos I, Kecamatan Tenjolaya, Kabupaten Bogor.
           </p>
         </div>
         <div className="mt-12 flex flex-col justify-center justify-center items-center text-center">
