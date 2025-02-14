@@ -20,7 +20,7 @@ import {
 
 const dataOptions = {
   populasi: {
-    title: "Statistik Populasi ",
+    title: "Data Populasi",
     description: "January - June 2024",
     chartData: [
       { browser: "Laki-Laki", visitors: 500, fill: "var(--color-chrome)" },
@@ -29,7 +29,7 @@ const dataOptions = {
     total: 1300,
   },
   pekerjaan: {
-    title: "Data Pekerjaan Warga",
+    title: "Data Pekerjaan",
     description: "January - June 2024",
     chartData: [
       { browser: "Petani", visitors: 400, fill: "var(--color-chrome)" },
@@ -38,13 +38,40 @@ const dataOptions = {
     total: 1000,
   },
   pendidikan: {
-    title: "Data Pendidikan Warga",
+    title: "Data Pendidikan",
     description: "January - June 2024",
     chartData: [
       { browser: "SD", visitors: 700, fill: "var(--color-chrome)" },
       { browser: "SMP", visitors: 500, fill: "var(--color-safari)" },
     ],
     total: 1200,
+  },
+  perkawinan: {
+    title: "Data Perkawinan",
+    description: "January - June 2024",
+    chartData: [
+      { browser: "Belum Kawin", visitors: 800, fill: "var(--color-chrome)" },
+      { browser: "Sudah Kawin", visitors: 500, fill: "var(--color-safari)" },
+    ],
+    total: 1300,
+  },
+  usia: {
+    title: "Data Usia",
+    description: "January - June 2024",
+    chartData: [
+      { browser: "Dibawah 20", visitors: 500, fill: "var(--color-chrome)" },
+      { browser: "Diatas 20", visitors: 800, fill: "var(--color-safari)" },
+    ],
+    total: 1300,
+  },
+  daftarPemilihTetap: {
+    title: "Data Daftar Pemilih Tetap",
+    description: "January - June 2024",
+    chartData: [
+      { browser: "Belum Daftar", visitors: 500, fill: "var(--color-chrome)" },
+      { browser: "Sudah Daftar", visitors: 800, fill: "var(--color-safari)" },
+    ],
+    total: 1300,
   },
 };
 
@@ -72,10 +99,10 @@ export function StatistikData() {
     <div className="flex flex-col">
       <div className="flex bg-gray-100 p-4 rounded-lg justify-between items-center mb-2">
         <h2 className="flex items-center gap-2 text-xl md:text-2xl font-bold text-gray-900 dark:text-gray-100">
-          <ChartPie /> Data Statistik
+          <ChartPie /> Data Statistik Penduduk
         </h2>
       </div>
-      <div className="flex flex-col md:flex-row w-full h-fit gap-4">
+      <div className="flex flex-col-reverse md:flex-row w-full h-fit gap-4">
         <Card className="flex flex-col w-full md:w-[50%] h-full  shadow-sm">
           <CardHeader className="items-center pb-0">
             <CardTitle>{title}</CardTitle>
