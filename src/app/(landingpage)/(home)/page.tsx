@@ -6,6 +6,7 @@ import { StatistikData } from "@/components/ui/statistik-data";
 import Galeri from "./components/galeri";
 import IdentitasDesa from "./components/identitas-desa";
 import JadwalKerja from "./components/jadwal-kerja";
+import MapDesa from "./components/map";
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
                 <Apatur />
                 <IdentitasDesa />
                 <JadwalKerja />
+                <MapDesa />
               </div>
               <div className="bg-white ring-1 ring-gray-100 w-full rounded-2xl p-4 space-y-8">
                 <BeritaDanArtikel />
