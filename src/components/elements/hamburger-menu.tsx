@@ -1,9 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import {
   Sheet,
-  SheetClose,
   SheetContent,
   SheetDescription,
   SheetFooter,
@@ -11,7 +8,10 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { AlignJustify } from "lucide-react";
+import { AlignJustify, KeyRound } from "lucide-react";
+import { Navlink } from "./link";
+import { DarkMode } from "../theme-provider/dark-mode";
+import Link from "next/link";
 
 export function HamburgerMenu() {
   return (
@@ -23,29 +23,23 @@ export function HamburgerMenu() {
       </SheetTrigger>
       <SheetContent>
         <SheetHeader>
-          <SheetTitle>Edit profile</SheetTitle>
-          <SheetDescription>
-            Make changes to your profile here. Click save when you are done.
-          </SheetDescription>
+          <SheetTitle></SheetTitle>
+          <SheetDescription></SheetDescription>
         </SheetHeader>
-        <div className="grid gap-4 py-4">
-          <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="name" className="text-right">
-              Name
-            </Label>
-            <Input id="name" className="col-span-3" />
+        <Navlink />
+        <SheetFooter className="mt-2">
+          <div className="flex w-full items-center gap-2">
+            <DarkMode className="w-full" />
+            <Link href="/login" className="w-full">
+              <Button
+                variant="outline"
+                className="w-full h-8 dark:border-gray-700"
+                title="Login Admin"
+              >
+                <KeyRound className="h-[1rem] w-[1rem] rotate-0 scale-100 transition-all" />
+              </Button>
+            </Link>
           </div>
-          <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="username" className="text-right">
-              Username
-            </Label>
-            <Input id="username" className="col-span-3" />
-          </div>
-        </div>
-        <SheetFooter>
-          <SheetClose asChild>
-            <Button type="submit">Save changes</Button>
-          </SheetClose>
         </SheetFooter>
       </SheetContent>
     </Sheet>

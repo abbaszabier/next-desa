@@ -5,7 +5,11 @@ import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
 
-export function DarkMode() {
+interface DarkModeProps {
+  className?: string;
+}
+
+export function DarkMode({ className }: DarkModeProps) {
   const { setTheme, theme } = useTheme();
 
   const handleDarkMode = () => {
@@ -16,7 +20,7 @@ export function DarkMode() {
     <Button
       variant="outline"
       size="icon"
-      className="w-8 h-8 dark:border-gray-700"
+      className={`w-8 h-8 dark:border-gray-700 ${className}`}
       onClick={handleDarkMode}
       title="Tema Gelap"
     >

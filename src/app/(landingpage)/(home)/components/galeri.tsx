@@ -1,4 +1,4 @@
-import { Images } from "lucide-react";
+import { ArrowRight, Images } from "lucide-react";
 import { ImagesSlider } from "@/components/ui/image-sliders";
 import React from "react";
 
@@ -15,6 +15,9 @@ export default function Galeri() {
         <h2 className="flex items-center gap-2 text-xl md:text-2xl font-bold text-gray-900 dark:text-gray-100">
           <Images /> Galeri Foto
         </h2>
+        <button className="flex items-center gap-1 text-xs text-indigo-600 dark:text-indigo-400">
+          Lihat Semua <ArrowRight size={14} />
+        </button>
       </div>
       <ImagesSlider className="h-[20rem] rounded-lg" images={images}>
         <div className="z-50 flex flex-col justify-center items-center">

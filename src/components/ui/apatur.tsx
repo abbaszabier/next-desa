@@ -2,8 +2,6 @@
 
 import * as React from "react";
 import Autoplay from "embla-carousel-autoplay";
-
-import { Card, CardContent } from "@/components/ui/card";
 import {
   Carousel,
   CarouselContent,
@@ -27,11 +25,9 @@ export function Apatur() {
         <CarouselContent>
           {Array.from({ length: 5 }).map((_, index) => (
             <CarouselItem key={index}>
-              <Card className="h-[25rem] md:h-[20rem] border">
-                <CardContent className="flex aspect-square items-center justify-center">
-                  <span className="text-4xl font-semibold">{index + 1}</span>
-                </CardContent>
-              </Card>
+              <div className="flex items-center justify-center w-full h-96 md:h-[20rem] rounded-lg bg-gray-50">
+                <p>Foto {index + 1}</p>
+              </div>
             </CarouselItem>
           ))}
         </CarouselContent>

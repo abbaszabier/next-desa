@@ -185,7 +185,7 @@ const CollisionMechanism = React.forwardRef<
         }}
         variants={{
           animate: {
-            translateY: beamOptions.translateY || "2800px",
+            translateY: beamOptions.translateY || "3200px",
             translateX: beamOptions.translateX || "0px",
             rotate: beamOptions.rotate || 0,
           },

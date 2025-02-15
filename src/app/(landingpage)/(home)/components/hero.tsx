@@ -2,10 +2,10 @@ import React from "react";
 
 export default function Hero() {
   return (
-    <div className="relative isolate py-28 px-6 lg:px-8">
-      <div className="mx-auto px-8 md:px-0 max-w-2xl">
+    <div className="relative isolate py-40 md:py-28 px-4">
+      <div className="mx-auto max-w-2xl">
         <div className="mb-8 flex justify-center">
-          <div className="relative rounded-full px-3 py-1 text-sm/6 text-gray-500 bg-white/30 backdrop-blur-xl dark:bg-black/50 dark:bg-opacity-80 ring-1 ring-gray-900/10 hover:ring-gray-900/20 dark:ring-gray-100/10 dark:hover:ring-gray-100/20">
+          <div className="relative rounded-full px-3 py-1 text-xs md:text-sm/6 text-gray-500 bg-white/30 backdrop-blur-xl dark:bg-black/50 dark:bg-opacity-80 ring-1 ring-gray-900/10 hover:ring-gray-900/20 dark:ring-gray-100/10 dark:hover:ring-gray-100/20">
             Selamat datang di{" "}
             <span className="font-semibold text-indigo-600">
               website resmi kami 👋🏼
@@ -13,11 +13,11 @@ export default function Hero() {
           </div>
         </div>
         <div className="text-center">
-          <h1 className="text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-7xl dark:text-gray-100">
+          <h1 className="text-4xl font-semibold tracking-tight text-balance text-gray-900 md:text-7xl dark:text-gray-100">
             Layanan Informasi Desa{" "}
             <span className="font-semibold text-indigo-600">Tapos I</span>{" "}
           </h1>
-          <p className="mt-6 text-base font-medium text-pretty text-gray-500 md:text-xl/8">
+          <p className="mt-6 text-sm font-medium text-pretty text-gray-500 md:text-xl/8">
             Satu Pintu untuk Mengakses Layanan Informasi dan Berita Terkini dari
             Desa Tapos I, Kecamatan Tenjolaya, Kabupaten Bogor.
           </p>

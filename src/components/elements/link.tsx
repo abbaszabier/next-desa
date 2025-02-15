@@ -14,52 +14,56 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { AuroraBackground } from "../ui/aurora-background";
+import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 const components: { title: string; href: string; description: string }[] = [
   {
     title: "Alert Dialog",
     href: "/docs/primitives/alert-dialog",
-    description:
-      "A modal dialog that interrupts the user with important content and expects a response.",
+    description: "A modal dialog",
   },
   {
     title: "Hover Card",
     href: "/docs/primitives/hover-card",
-    description:
-      "For sighted users to preview content available behind a link.",
+    description: "For sighted",
   },
   {
     title: "Progress",
     href: "/docs/primitives/progress",
-    description:
-      "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
+    description: "Displays an indicator",
   },
   {
     title: "Scroll-area",
     href: "/docs/primitives/scroll-area",
-    description: "Visually or semantically separates content.",
+    description: "Visually content.",
   },
   {
     title: "Tabs",
     href: "/docs/primitives/tabs",
-    description:
-      "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
+    description: "A set of layered",
   },
   {
     title: "Tooltip",
     href: "/docs/primitives/tooltip",
-    description:
-      "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
+    description: "A popup nformation",
   },
 ];
 
 export function Navlink() {
+  const router = usePathname();
+
+  const isActive = (href: string) => router === href;
+
   return (
-    <NavigationMenu>
+    <NavigationMenu className="flex flex-col md:flex-1">
       <NavigationMenuList>
         <NavigationMenuItem>
           <Link href="/" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+            <NavigationMenuLink
+              active={isActive("/")}
+              className={navigationMenuTriggerStyle()}
+            >
               Beranda
             </NavigationMenuLink>
           </Link>
@@ -72,16 +76,13 @@ export function Navlink() {
                 <NavigationMenuLink asChild>
                   <Link href="/sejarah-desa" passHref>
                     <AuroraBackground className="h-[208px] cursor-pointer">
-                      <motion.div
-                        // initial={{ opacity: 0.0, y: 40 }}
-                        // whileInView={{ opacity: 1, y: 0 }}
-                        // transition={{
-                        //   delay: 0.3,
-                        //   duration: 0.8,
-                        //   ease: "easeInOut",
-                        // }}
-                        className="cursor-pointer flex h-full w-full select-none flex-col justify-end rounded-md p-6 no-underline outline-none focus:shadow-md"
-                      >
+                      <motion.div className="cursor-pointer flex h-full w-full select-none flex-col justify-end rounded-md p-6 no-underline outline-none focus:shadow-md">
+                        <Image
+                          src="/images/icons/icon-128x128.png"
+                          width={48}
+                          height={48}
+                          alt={""}
+                        />
                         <div className="mb-2 mt-4 text-lg font-medium leading-none dark:text-white">
                           Sejarah Desa
                         </div>
@@ -93,15 +94,31 @@ export function Navlink() {
                   </Link>
                 </NavigationMenuLink>
               </li>
-              <ListItem href="/docs" title="Visi dan Misi">
+              <ListItem href="/visi-misi" title="Visi dan Misi">
                 Lihat Visi dan Misi Desa.
               </ListItem>
-              <ListItem href="/docs/installation" title="Peta">
+              <ListItem href="/peta" title="Peta">
                 Lihat peta desa
               </ListItem>
-              <ListItem href="/docs/primitives/typography" title="Galeri">
+              <ListItem href="/galeri-foto" title="Galeri">
                 Lihat galeri desa
               </ListItem>
+            </ul>
+          </NavigationMenuContent>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
+          <NavigationMenuTrigger>Data Desa</NavigationMenuTrigger>
+          <NavigationMenuContent>
+            <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr] xs:grid-rows-2">
+              {components.map((component) => (
+                <ListItem
+                  key={component.title}
+                  title={component.title}
+                  href={component.href}
+                >
+                  {component.description}
+                </ListItem>
+              ))}
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
@@ -120,22 +137,6 @@ export function Navlink() {
           </Link>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuTrigger>Data Desa</NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-              {components.map((component) => (
-                <ListItem
-                  key={component.title}
-                  title={component.title}
-                  href={component.href}
-                >
-                  {component.description}
-                </ListItem>
-              ))}
-            </ul>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
           <Link href="/" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
               Informasi
@@ -152,7 +153,7 @@ export function Navlink() {
         <NavigationMenuItem>
           <Link href="/" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Artikel
+              Berita
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
