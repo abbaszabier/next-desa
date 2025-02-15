@@ -17,7 +17,7 @@ export default function Hero() {
             Layanan Informasi Desa{" "}
             <span className="font-semibold text-indigo-600">Tapos I</span>{" "}
           </h1>
-          <p className="mt-6 text-md font-medium text-pretty text-gray-500 md:text-xl/8">
+          <p className="mt-6 text-base font-medium text-pretty text-gray-500 md:text-xl/8">
             Satu Pintu untuk Mengakses Layanan Informasi dan Berita Terkini dari
             Desa Tapos I, Kecamatan Tenjolaya, Kabupaten Bogor.
           </p>

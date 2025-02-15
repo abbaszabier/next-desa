@@ -16,14 +16,14 @@ export default function Home() {
         <div className="flex flex-col md:px-16">
           <Hero />
           <div className="w-full h-fit mb-4 px-16 md:p-0">
-            <div className="bg-[#F5F5F5]/60 dark:bg-gray-900 dark:bg-opacity-80 ring-1 ring-gray-900/5 dark:ring-gray-100/20 dark:hover:ring-gray-100/20 grid md:grid-cols-[25%_1fr] gap-y-[10px] p-4 h-fit w-full gap-x-[10px] rounded-2xl">
-              <div className="bg-white ring-1 ring-gray-100 w-full rounded-2xl space-y-8 p-4">
+            <div className="bg-[#F5F5F5]/60 dark:bg-gray-900 dark:bg-opacity-60 ring-1 ring-gray-900/5 dark:ring-gray-50/15 grid md:grid-cols-[25%_1fr] gap-y-[10px] p-4 h-fit w-full gap-x-[10px] rounded-2xl">
+              <div className="bg-white ring-1 ring-gray-100 w-full rounded-2xl space-y-8 p-4 dark:bg-black dark:ring-gray-100/10">
                 <Apatur />
                 <IdentitasDesa />
                 <JadwalKerja />
                 <MapDesa />
               </div>
-              <div className="bg-white ring-1 ring-gray-100 w-full rounded-2xl p-4 space-y-8">
+              <div className="bg-white ring-1 ring-gray-100 w-full rounded-2xl p-4 space-y-8 dark:bg-black dark:bg-opacity-60 dark:ring-gray-100/10">
                 <BeritaDanArtikel />
                 <StatistikData />
                 <Galeri />
