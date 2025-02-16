@@ -64,11 +64,11 @@ export default function MapDesa() {
   return (
     <div className="flex flex-col">
       <div className="flex bg-gray-100 p-4 rounded-lg justify-between items-center mb-2 dark:bg-gray-900 dark:ring-gray-100">
-        <h2 className="flex items-center gap-2 text-xl md:text-2xl font-bold text-gray-900 dark:text-gray-100">
+        <h2 className="flex items-center gap-2 text-xl lg:text-2xl font-bold text-gray-900 dark:text-gray-100">
           <MapPin /> Peta Desa
         </h2>
       </div>
-      <div ref={mapRef} className="w-full h-64 md:h-96 rounded-lg" />
+      <div ref={mapRef} className="w-full h-64 lg:h-96 rounded-lg" />
     </div>
   );
 }
