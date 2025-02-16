@@ -10,7 +10,11 @@ export function SearchBar() {
         placeholder="Cari artikel..."
         className="rounded-r-none h-8 dark:border-gray-700"
       />
-      <Button type="submit" className="rounded-l-none h-8">
+      <Button
+        variant="black"
+        type="submit"
+        className="rounded-l-none h-8 w-8 text-white dark:text-black dark:bg-white dark:hover:bg-white/90"
+      >
         <Search />
       </Button>
     </div>

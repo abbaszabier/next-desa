@@ -14,74 +14,86 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { AuroraBackground } from "../ui/aurora-background";
+import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 const components: { title: string; href: string; description: string }[] = [
   {
-    title: "Alert Dialog",
-    href: "/docs/primitives/alert-dialog",
-    description:
-      "A modal dialog that interrupts the user with important content and expects a response.",
+    title: "Data Populasi",
+    href: "/populasi",
+    description: "Sebaran penduduk",
   },
   {
-    title: "Hover Card",
-    href: "/docs/primitives/hover-card",
-    description:
-      "For sighted users to preview content available behind a link.",
+    title: "Data Pendidikan",
+    href: "/pendidikan",
+    description: "Sebaran pendidikan",
   },
   {
-    title: "Progress",
-    href: "/docs/primitives/progress",
-    description:
-      "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
+    title: "Data Pekerjaan",
+    href: "/pekerjaan",
+    description: "Sebaran pekerjaan",
   },
   {
-    title: "Scroll-area",
-    href: "/docs/primitives/scroll-area",
-    description: "Visually or semantically separates content.",
+    title: "Perkawinan",
+    href: "/perkawinan",
+    description: "Sebaran perkawinan",
   },
   {
-    title: "Tabs",
-    href: "/docs/primitives/tabs",
-    description:
-      "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
+    title: "Data Usia",
+    href: "/usia",
+    description: "Sebaran usia",
   },
   {
-    title: "Tooltip",
-    href: "/docs/primitives/tooltip",
-    description:
-      "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
+    title: "Data Daftar Pemilih Tetap",
+    href: "/dpt",
+    description: "Jumlah DPT",
   },
 ];
 
 export function Navlink() {
+  const router = usePathname();
+
+  const isActive = (href: string) => router === href;
+
   return (
-    <NavigationMenu>
+    <NavigationMenu className="flex flex-col lg:flex-1">
       <NavigationMenuList>
         <NavigationMenuItem>
           <Link href="/" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+            <NavigationMenuLink
+              active={isActive("/")}
+              className={navigationMenuTriggerStyle()}
+            >
               Beranda
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuTrigger>Profil Desa</NavigationMenuTrigger>
+          <NavigationMenuTrigger
+            className={`${
+              isActive("/sejarah-desa") ||
+              isActive("/visi-misi") ||
+              isActive("/peta") ||
+              isActive("/galeri-foto")
+                ? "text-indigo-600"
+                : ""
+            }`}
+          >
+            Profil Desa
+          </NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+            <ul className="grid gap-3 p-4 lg:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
               <li className="row-span-3">
                 <NavigationMenuLink asChild>
                   <Link href="/sejarah-desa" passHref>
                     <AuroraBackground className="h-[208px] cursor-pointer">
-                      <motion.div
-                        // initial={{ opacity: 0.0, y: 40 }}
-                        // whileInView={{ opacity: 1, y: 0 }}
-                        // transition={{
-                        //   delay: 0.3,
-                        //   duration: 0.8,
-                        //   ease: "easeInOut",
-                        // }}
-                        className="cursor-pointer flex h-full w-full select-none flex-col justify-end rounded-md p-6 no-underline outline-none focus:shadow-md"
-                      >
+                      <motion.div className="cursor-pointer flex h-full w-full select-none flex-col justify-end rounded-md p-6 no-underline outline-none focus:shadow-md">
+                        <Image
+                          src="/images/icons/icon-128x128.png"
+                          width={48}
+                          height={48}
+                          alt={""}
+                        />
                         <div className="mb-2 mt-4 text-lg font-medium leading-none dark:text-white">
                           Sejarah Desa
                         </div>
@@ -93,36 +105,35 @@ export function Navlink() {
                   </Link>
                 </NavigationMenuLink>
               </li>
-              <ListItem href="/docs" title="Visi dan Misi">
+              <ListItem href="/visi-misi" title="Visi dan Misi">
                 Lihat Visi dan Misi Desa.
               </ListItem>
-              <ListItem href="/docs/installation" title="Peta">
+              <ListItem href="/peta" title="Peta">
                 Lihat peta desa
               </ListItem>
-              <ListItem href="/docs/primitives/typography" title="Galeri">
+              <ListItem href="/galeri-foto" title="Galeri">
                 Lihat galeri desa
               </ListItem>
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <Link href="/" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Pemerintahan
-            </NavigationMenuLink>
-          </Link>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <Link href="/" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Pembangunan
-            </NavigationMenuLink>
-          </Link>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <NavigationMenuTrigger>Data Desa</NavigationMenuTrigger>
+          <NavigationMenuTrigger
+            className={`${
+              isActive("/populasi") ||
+              isActive("/pendidikan") ||
+              isActive("/pekerjaan") ||
+              isActive("/perkawinan") ||
+              isActive("/usia") ||
+              isActive("/dpt")
+                ? "text-indigo-600"
+                : ""
+            }`}
+          >
+            Data Statistik
+          </NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+            <ul className="grid gap-3 p-4 lg:w-[400px] lg:w-[500px] lg:grid-cols-[1fr_1fr] xs:grid-rows-2">
               {components.map((component) => (
                 <ListItem
                   key={component.title}
@@ -136,39 +147,67 @@ export function Navlink() {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <Link href="/" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+          <Link href="/pemerintahan" legacyBehavior passHref>
+            <NavigationMenuLink
+              active={isActive("/pemerintahan")}
+              className={navigationMenuTriggerStyle()}
+            >
+              Pemerintahan
+            </NavigationMenuLink>
+          </Link>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
+          <Link href="/pembangunan" legacyBehavior passHref>
+            <NavigationMenuLink
+              active={isActive("/pembangunan")}
+              className={navigationMenuTriggerStyle()}
+            >
+              Pembangunan
+            </NavigationMenuLink>
+          </Link>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
+          <Link href="/informasi" legacyBehavior passHref>
+            <NavigationMenuLink
+              active={isActive("/informasi")}
+              className={navigationMenuTriggerStyle()}
+            >
               Informasi
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <Link href="/" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+          <Link href="/produk-hukum" legacyBehavior passHref>
+            <NavigationMenuLink
+              active={isActive("/produk-hukum")}
+              className={navigationMenuTriggerStyle()}
+            >
               Produk Hukum
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <Link href="/" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Artikel
+          <Link href="/berita" legacyBehavior passHref>
+            <NavigationMenuLink
+              active={isActive("/berita")}
+              className={navigationMenuTriggerStyle()}
+            >
+              Berita
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <Link href="/" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+          <Link href="/lapak-desa" legacyBehavior passHref>
+            <NavigationMenuLink
+              active={isActive("/lapak-desa")}
+              className={navigationMenuTriggerStyle()}
+            >
               Lapak Desa
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <Link href="/" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Hubungi Kami
-            </NavigationMenuLink>
-          </Link>
+          <div className={navigationMenuTriggerStyle()}>Hubungi Kami</div>
         </NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>

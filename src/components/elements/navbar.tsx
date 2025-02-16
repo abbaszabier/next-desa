@@ -11,7 +11,7 @@ import Link from "next/link";
 export default function Navbar() {
   return (
     <>
-      <nav className="flex flex-col w-full md:px-12 py-1 border-b border-gray-200 dark:border-gray-700 bg-white/50 backdrop-blur-md dark:bg-black/50 dark:bg-opacity-80">
+      <nav className="flex flex-col w-full lg:px-12 py-1 border-b border-gray-200 dark:border-gray-700 bg-white/50 backdrop-blur-md dark:bg-black/50 dark:bg-opacity-80">
         {/* Header */}
         <div className="relative py-2 text-base">
           <div className="flex justify-between items-center px-4">
@@ -47,7 +47,7 @@ export default function Navbar() {
       </nav>
 
       <nav
-        className="sticky top-0 z-50 w-full px-12 py-1 shadow-md bg-white/50 backdrop-blur-md dark:bg-black/50 dark:bg-opacity-80
+        className="sticky top-0 z-50 w-full px-12 py-1 shadow bg-white/50 backdrop-blur-md dark:bg-black/50 dark:bg-opacity-80
       dark:border-b dark:border-gray-700 dark:shadow-lg hidden lg:block"
       >
         <Navlink />
