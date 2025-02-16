@@ -11,7 +11,7 @@ import Link from "next/link";
 export default function Navbar() {
   return (
     <>
-      <nav className="flex flex-col w-full md:px-12 py-1 border-b border-gray-200 dark:border-gray-700 bg-white/50 backdrop-blur-md dark:bg-black/50 dark:bg-opacity-80">
+      <nav className="flex flex-col w-full lg:px-12 py-1 border-b border-gray-200 dark:border-gray-700 bg-white/50 backdrop-blur-md dark:bg-black/50 dark:bg-opacity-80">
         {/* Header */}
         <div className="relative py-2 text-base">
           <div className="flex justify-between items-center px-4">
@@ -23,7 +23,7 @@ export default function Navbar() {
               width={0}
               height={0}
             />
-            <div className="gap-2 items-center hidden md:flex">
+            <div className="gap-2 items-center hidden lg:flex">
               <DateTime />
               <div className="w-[1px] h-6 mx-2 bg-gray-200 dark:bg-gray-700" />
               <DarkMode />
@@ -48,7 +48,7 @@ export default function Navbar() {
 
       <nav
         className="sticky top-0 z-50 w-full px-12 py-1 shadow bg-white/50 backdrop-blur-md dark:bg-black/50 dark:bg-opacity-80
-      dark:border-b dark:border-gray-700 dark:shadow-lg hidden md:block"
+      dark:border-b dark:border-gray-700 dark:shadow-lg hidden lg:block"
       >
         <Navlink />
       </nav>

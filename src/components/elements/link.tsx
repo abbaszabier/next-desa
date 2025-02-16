@@ -19,34 +19,34 @@ import { usePathname } from "next/navigation";
 
 const components: { title: string; href: string; description: string }[] = [
   {
-    title: "Alert Dialog",
-    href: "/docs/primitives/alert-dialog",
-    description: "A modal dialog",
+    title: "Data Populasi",
+    href: "/populasi",
+    description: "Sebaran penduduk",
   },
   {
-    title: "Hover Card",
-    href: "/docs/primitives/hover-card",
-    description: "For sighted",
+    title: "Data Pendidikan",
+    href: "/pendidikan",
+    description: "Sebaran pendidikan",
   },
   {
-    title: "Progress",
-    href: "/docs/primitives/progress",
-    description: "Displays an indicator",
+    title: "Data Pekerjaan",
+    href: "/pekerjaan",
+    description: "Sebaran pekerjaan",
   },
   {
-    title: "Scroll-area",
-    href: "/docs/primitives/scroll-area",
-    description: "Visually content.",
+    title: "Perkawinan",
+    href: "/perkawinan",
+    description: "Sebaran perkawinan",
   },
   {
-    title: "Tabs",
-    href: "/docs/primitives/tabs",
-    description: "A set of layered",
+    title: "Data Usia",
+    href: "/usia",
+    description: "Sebaran usia",
   },
   {
-    title: "Tooltip",
-    href: "/docs/primitives/tooltip",
-    description: "A popup nformation",
+    title: "Data Daftar Pemilih Tetap",
+    href: "/dpt",
+    description: "Jumlah DPT",
   },
 ];
 
@@ -56,7 +56,7 @@ export function Navlink() {
   const isActive = (href: string) => router === href;
 
   return (
-    <NavigationMenu className="flex flex-col md:flex-1">
+    <NavigationMenu className="flex flex-col lg:flex-1">
       <NavigationMenuList>
         <NavigationMenuItem>
           <Link href="/" legacyBehavior passHref>
@@ -69,9 +69,20 @@ export function Navlink() {
           </Link>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuTrigger>Profil Desa</NavigationMenuTrigger>
+          <NavigationMenuTrigger
+            className={`${
+              isActive("/sejarah-desa") ||
+              isActive("/visi-misi") ||
+              isActive("/peta") ||
+              isActive("/galeri-foto")
+                ? "text-indigo-600"
+                : ""
+            }`}
+          >
+            Profil Desa
+          </NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+            <ul className="grid gap-3 p-4 lg:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
               <li className="row-span-3">
                 <NavigationMenuLink asChild>
                   <Link href="/sejarah-desa" passHref>
@@ -107,9 +118,22 @@ export function Navlink() {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuTrigger>Data Desa</NavigationMenuTrigger>
+          <NavigationMenuTrigger
+            className={`${
+              isActive("/populasi") ||
+              isActive("/pendidikan") ||
+              isActive("/pekerjaan") ||
+              isActive("/perkawinan") ||
+              isActive("/usia") ||
+              isActive("/dpt")
+                ? "text-indigo-600"
+                : ""
+            }`}
+          >
+            Data Statistik
+          </NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr] xs:grid-rows-2">
+            <ul className="grid gap-3 p-4 lg:w-[400px] lg:w-[500px] lg:grid-cols-[1fr_1fr] xs:grid-rows-2">
               {components.map((component) => (
                 <ListItem
                   key={component.title}
@@ -123,53 +147,67 @@ export function Navlink() {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <Link href="/" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+          <Link href="/pemerintahan" legacyBehavior passHref>
+            <NavigationMenuLink
+              active={isActive("/pemerintahan")}
+              className={navigationMenuTriggerStyle()}
+            >
               Pemerintahan
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <Link href="/" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+          <Link href="/pembangunan" legacyBehavior passHref>
+            <NavigationMenuLink
+              active={isActive("/pembangunan")}
+              className={navigationMenuTriggerStyle()}
+            >
               Pembangunan
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <Link href="/" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+          <Link href="/informasi" legacyBehavior passHref>
+            <NavigationMenuLink
+              active={isActive("/informasi")}
+              className={navigationMenuTriggerStyle()}
+            >
               Informasi
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <Link href="/" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+          <Link href="/produk-hukum" legacyBehavior passHref>
+            <NavigationMenuLink
+              active={isActive("/produk-hukum")}
+              className={navigationMenuTriggerStyle()}
+            >
               Produk Hukum
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <Link href="/" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+          <Link href="/berita" legacyBehavior passHref>
+            <NavigationMenuLink
+              active={isActive("/berita")}
+              className={navigationMenuTriggerStyle()}
+            >
               Berita
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <Link href="/" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+          <Link href="/lapak-desa" legacyBehavior passHref>
+            <NavigationMenuLink
+              active={isActive("/lapak-desa")}
+              className={navigationMenuTriggerStyle()}
+            >
               Lapak Desa
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <Link href="/" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Hubungi Kami
-            </NavigationMenuLink>
-          </Link>
+          <div className={navigationMenuTriggerStyle()}>Hubungi Kami</div>
         </NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>
