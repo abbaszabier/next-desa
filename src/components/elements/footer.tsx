@@ -1,6 +1,5 @@
 import Image from "next/image";
 import React from "react";
-
 interface MenuItem {
   title: string;
   links: {
@@ -27,52 +26,12 @@ interface FooterProps {
 
 export default function Footer({
   logo = {
-    src: "https://www.shadcnblocks.com/images/block/block-1.svg",
+    src: "/images/icons/icon-128x128.png",
     alt: "blocks for shadcn/ui",
-    title: "Shadcnblocks.com",
+    title: "",
     url: "https://www.shadcnblocks.com",
   },
-  tagline = "Components made easy.",
-  menuItems = [
-    {
-      title: "Product",
-      links: [
-        { text: "Overview", url: "#" },
-        { text: "Pricing", url: "#" },
-        { text: "Marketplace", url: "#" },
-        { text: "Features", url: "#" },
-        { text: "Integrations", url: "#" },
-        { text: "Pricing", url: "#" },
-      ],
-    },
-    {
-      title: "Company",
-      links: [
-        { text: "About", url: "#" },
-        { text: "Team", url: "#" },
-        { text: "Blog", url: "#" },
-        { text: "Careers", url: "#" },
-        { text: "Contact", url: "#" },
-        { text: "Privacy", url: "#" },
-      ],
-    },
-    {
-      title: "Resources",
-      links: [
-        { text: "Help", url: "#" },
-        { text: "Sales", url: "#" },
-        { text: "Advertise", url: "#" },
-      ],
-    },
-    {
-      title: "Social",
-      links: [
-        { text: "Twitter", url: "#" },
-        { text: "Instagram", url: "#" },
-        { text: "LinkedIn", url: "#" },
-      ],
-    },
-  ],
+  tagline = "Desa yang terletak di Kabupaten Bogor, Jawa Barat",
   copyright = `© 2025 Copyright. All rights reserved.`,
   bottomLinks = [
     { text: "Terms and Conditions", url: "#" },
@@ -84,39 +43,82 @@ export default function Footer({
       className="w-full py-6 px-12 bg-white/50 backdrop-blur-md dark:bg-black/50 dark:bg-opacity-80
       dark:border-t dark:border-gray-700"
     >
-      <div className="grid grid-cols-2 gap-8 lg:grid-cols-6 w-full">
-        <div className="col-span-2 mb-8 lg:mb-0">
-          <div className="flex items-center gap-2 lg:justify-start">
+      <div className="flex w-full">
+        <div className="flex w-full items-center flex-col justify-center">
+          <div className="flex items-center justify-center gap-2 lg:justify-start">
             <a href="https://shadcnblocks.com">
               <Image
                 src={logo.src}
                 alt={logo.alt}
                 title={logo.title}
-                className="h-10"
-                width={40}
-                height={40}
+                className="h-12 w-12"
+                width={60}
+                height={60}
               />
             </a>
             <p className="text-xl font-semibold">{logo.title}</p>
           </div>
-          <p className="mt-4 font-bold">{tagline}</p>
-        </div>
-        {menuItems.map((section, sectionIdx) => (
-          <div key={sectionIdx}>
-            <h3 className="mb-4 font-bold">{section.title}</h3>
-            <ul className="space-y-4 text-muted-foreground">
-              {section.links.map((link, linkIdx) => (
-                <li key={linkIdx} className="font-medium hover:text-primary">
-                  <a href={link.url}>{link.text}</a>
-                </li>
-              ))}
-            </ul>
+          <p className="mt-4 text-sm font-medium text-gray-500 dark:text-gray-300">
+            {tagline}
+          </p>
+          <div className="mt-4 flex flex-col items-center gap-4">
+            <div className="flex flex-wrap items-center justify-center gap-4">
+              <a
+                href="#"
+                className="border border-gray-200 rounded-full p-2 group hover:border-primary transition-all"
+              >
+                <Image
+                  src="https://shadcnblocks.com/images/block/logos/shadcn-ui-small.svg"
+                  alt="company logo"
+                  width={0}
+                  height={0}
+                  className="h-4 w-4 saturate-0 transition-all group-hover:saturate-100"
+                />
+              </a>
+              <a
+                href="#"
+                className="border border-gray-200 rounded-full p-2 group hover:border-primary transition-all"
+              >
+                <Image
+                  src="https://shadcnblocks.com/images/block/logos/typescript-small.svg"
+                  alt="company logo"
+                  width={0}
+                  height={0}
+                  className="h-4 w-4 saturate-0 transition-all group-hover:saturate-100"
+                />
+              </a>
+
+              <a
+                href="#"
+                className="border border-gray-200 rounded-full p-2 group hover:border-primary transition-all"
+              >
+                <Image
+                  src="https://shadcnblocks.com/images/block/logos/react-icon.svg"
+                  width={0}
+                  height={0}
+                  alt="company logo"
+                  className="h-4 w-4 saturate-0 transition-all group-hover:saturate-100"
+                />
+              </a>
+              <a
+                href="#"
+                className="border border-gray-200 rounded-full p-2 group hover:border-primary transition-all"
+              >
+                <Image
+                  src="https://shadcnblocks.com/images/block/logos/tailwind-small.svg"
+                  width={0}
+                  height={0}
+                  alt="company logo"
+                  className="h-4 w-4 saturate-0 transition-all group-hover:saturate-100"
+                />
+              </a>
+            </div>
           </div>
-        ))}
+        </div>
       </div>
-      <div className="mt-24 flex flex-col justify-between gap-4 border-t pt-8 text-sm font-medium text-muted-foreground md:flex-row md:items-center">
-        <p>{copyright}</p>
-        <ul className="flex gap-4">
+      <div className="mt-8 flex flex-col justify-center lg:justify-between gap-4 border-t pt-6 text-sm font-medium text-muted-foreground lg:flex-row lg:items-center">
+        <p className="text-center">{copyright}</p>
+        <ul className="flex items-center justify-center gap-4">
           {bottomLinks.map((link, linkIdx) => (
             <li key={linkIdx} className="underline hover:text-primary">
               <a href={link.url}>{link.text}</a>
