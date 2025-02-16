@@ -98,12 +98,12 @@ export function StatistikData() {
   return (
     <div className="flex flex-col">
       <div className="flex bg-gray-100 p-4 rounded-lg justify-between items-center mb-2 dark:bg-gray-900 dark:ring-gray-100">
-        <h2 className="flex items-center gap-2 text-xl md:text-2xl font-bold text-gray-900 dark:text-gray-100">
+        <h2 className="flex items-center gap-2 text-xl lg:text-2xl font-bold text-gray-900 dark:text-gray-100">
           <ChartPie /> Data Statistik
         </h2>
       </div>
-      <div className="flex flex-col-reverse md:flex-row w-full h-fit gap-4">
-        <Card className="flex flex-col w-full md:w-[50%] h-full  shadow-sm">
+      <div className="flex flex-col-reverse lg:flex-row w-full h-fit gap-4">
+        <Card className="flex flex-col w-full lg:w-[50%] h-full  shadow-sm">
           <CardHeader className="items-center pb-0">
             <CardTitle>{title}</CardTitle>
             <CardDescription>{description}</CardDescription>
@@ -167,7 +167,7 @@ export function StatistikData() {
             </div>
           </CardFooter>
         </Card>
-        <div className="hidden md:flex flex-col w-full md:w-[50%] border bg-card text-card-foreground rounded-lg p-4 shadow-sm">
+        <div className="hidden lg:flex flex-col w-full lg:w-[50%] border bg-card text-card-foreground rounded-lg p-4 shadow-sm">
           <div className="flex flex-col gap-3">
             {Object.keys(dataOptions).map((key) => {
               const isActive = selectedData === key;

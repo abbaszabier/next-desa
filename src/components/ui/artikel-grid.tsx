@@ -10,7 +10,7 @@ export const ArtikelGrid = ({
   return (
     <div
       className={cn(
-        "grid md:auto-rows-[20rem] grid-cols-1 md:grid-cols-3 gap-4",
+        "grid lg:auto-rows-[20rem] grid-cols-1 lg:grid-cols-3 gap-4",
         className
       )}
     >

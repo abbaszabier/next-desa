@@ -49,7 +49,7 @@ export function BeritaDanArtikel() {
   return (
     <div className="flex flex-col">
       <div className="flex bg-gray-100 p-4 rounded-lg justify-between items-center mb-2 dark:bg-gray-900 dark:ring-gray-100">
-        <h2 className="flex items-center gap-2 text-xl md:text-2xl font-bold text-gray-900 dark:text-gray-100">
+        <h2 className="flex items-center gap-2 text-xl lg:text-2xl font-bold text-gray-900 dark:text-gray-100">
           <Newspaper /> Berita Terbaru
         </h2>
         <button className="flex items-center gap-1 text-xs text-indigo-600 dark:text-indigo-400">
