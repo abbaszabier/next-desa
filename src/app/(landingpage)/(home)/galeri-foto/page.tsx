@@ -10,6 +10,7 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 interface GalleryItem {
   id: string;
@@ -89,7 +90,12 @@ export default function Gallery6({
   }, [carouselApi]);
   return (
     <section className="flex flex-col items-center justify-center py-40">
-      <div className="mb-8 flex flex-col items-center justify-between md:mb-14 lg:mb-16">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.4 }}
+        className="mb-8 flex flex-col items-center justify-between md:mb-14 lg:mb-16"
+      >
         <div className="text-center">
           <h1 className="text-4xl font-semibold tracking-tight text-balance text-gray-900 lg:text-7xl dark:text-gray-100">
             {heading}
@@ -122,8 +128,13 @@ export default function Gallery6({
             <ArrowRight className="size-5" />
           </Button>
         </div>
-      </div>
-      <div className="w-full">
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.8 }}
+        className="w-full"
+      >
         <Carousel
           setApi={setCarouselApi}
           opts={{
@@ -168,7 +179,7 @@ export default function Gallery6({
             ))}
           </CarouselContent>
         </Carousel>
-      </div>
+      </motion.div>
     </section>
   );
 }
