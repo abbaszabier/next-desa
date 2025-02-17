@@ -157,12 +157,12 @@ export function Navlink() {
           </Link>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <Link href="/pembangunan" legacyBehavior passHref>
+          <Link href="/tupoksi" legacyBehavior passHref>
             <NavigationMenuLink
-              active={isActive("/pembangunan")}
+              active={isActive("/tupoksi")}
               className={navigationMenuTriggerStyle()}
             >
-              Pembangunan
+              Tupoksi
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
