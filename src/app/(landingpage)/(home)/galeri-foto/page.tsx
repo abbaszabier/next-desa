@@ -95,7 +95,6 @@ export default function Gallery6({
             {heading}
           </h1>
           <p className="mt-4 mb-4 text-sm font-medium text-pretty text-gray-500 lg:text-xl/8">
-            {/* penjelasan galery foto */}
             Dokumentasi terbaru dari desa Tapos I, Kecamatan Tenjolaya,
           </p>
         </div>
