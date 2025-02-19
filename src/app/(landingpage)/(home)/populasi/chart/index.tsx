@@ -31,9 +31,9 @@ const chartConfig = {
   },
 } satisfies ChartConfig;
 
-export function ChartPopulasi() {
+export function PopulasiChart() {
   return (
-    <Card className="flex flex-col">
+    <Card className="flex flex-col rounded-2xl">
       <CardContent className="flex-1 pb-0 space-y-10">
         <ChartContainer
           config={chartConfig}
