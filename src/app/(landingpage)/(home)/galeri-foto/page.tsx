@@ -20,13 +20,13 @@ interface GalleryItem {
   image: string;
 }
 
-interface Gallery6Props {
+interface GaleriFotoProps {
   heading?: string;
   demoUrl?: string;
   items?: GalleryItem[];
 }
 
-export default function Gallery6({
+export default function GaleriFoto({
   heading = "Galeri Foto",
   items = [
     {
@@ -70,7 +70,7 @@ export default function Gallery6({
       image: "https://shadcnblocks.com/images/block/placeholder-dark-1.svg",
     },
   ],
-}: Gallery6Props) {
+}: GaleriFotoProps) {
   const [carouselApi, setCarouselApi] = useState<CarouselApi>();
   const [canScrollPrev, setCanScrollPrev] = useState(false);
   const [canScrollNext, setCanScrollNext] = useState(false);
