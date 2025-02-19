@@ -2,6 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import { PerkawinanChart } from "./chart";
 
 export default function Perkawinan() {
   return (
@@ -31,7 +32,9 @@ export default function Perkawinan() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.8 }}
         className="w-full"
-      ></motion.div>
+      >
+        <PerkawinanChart />
+      </motion.div>
     </section>
   );
 }
