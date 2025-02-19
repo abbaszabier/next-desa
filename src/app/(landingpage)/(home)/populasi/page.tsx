@@ -2,6 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import { ChartPopulasi } from "./chart";
 
 export default function Populasi() {
   return (
@@ -31,7 +32,9 @@ export default function Populasi() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.8 }}
         className="w-full"
-      ></motion.div>
+      >
+        <ChartPopulasi />
+      </motion.div>
     </section>
   );
 }
