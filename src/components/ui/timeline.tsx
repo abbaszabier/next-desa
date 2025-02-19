@@ -34,11 +34,11 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
     >
       <div className="flex  flex-col items-center justify-center text-center w-full">
         <h2 className="text-4xl font-semibold tracking-tight text-balance text-gray-900 dark:text-gray-100">
-          Changelog from my journey
+          Periode Kepala Desa dari Masa ke Masa
         </h2>
-        <p className="mt-4 text-neutral-700 dark:text-neutral-300 text-sm md:text-base max-w-sm">
-          I&apos;ve been working on Aceternity for the past 2 years. Here&apos;s
-          a timeline of my journey.
+        <p className="mt-4 text-neutral-700 dark:text-neutral-300 text-sm md:text-base max-w-md">
+          Berikut adalah daftar Kepala Desa Tapos I, Kecamatan Tenjolaya dari
+          masa ke masa.
         </p>
       </div>
 
