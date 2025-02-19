@@ -31,7 +31,7 @@ export default function Footer({
     title: "",
     url: "https://www.shadcnblocks.com",
   },
-  tagline = "Desa yang terletak di Kabupaten Bogor, Jawa Barat",
+  tagline = "Website desa dibangun dengan tujuan sebagai media pelayanan publik resmi desa, yang dibangun dan dikelola oleh tim desa setempat. Dengan memanfaatkan website penyelenggaraan pelayanan publik dapat dilakukan secara cepat dan mudah.",
   copyright = `© 2025 Copyright. All rights reserved.`,
   bottomLinks = [
     { text: "Terms and Conditions", url: "#" },
@@ -58,7 +58,7 @@ export default function Footer({
             </a>
             <p className="text-xl font-semibold">{logo.title}</p>
           </div>
-          <p className="mt-4 text-sm font-medium text-gray-500 dark:text-gray-300">
+          <p className="mt-4 text-sm max-w-md text-center font-medium text-gray-500 dark:text-gray-300">
             {tagline}
           </p>
           <div className="mt-4 flex flex-col items-center gap-4">
