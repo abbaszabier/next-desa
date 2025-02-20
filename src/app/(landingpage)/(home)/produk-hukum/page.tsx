@@ -2,6 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import { ProdukHukumTable } from "./table";
 
 export default function ProdukHukum() {
   return (
@@ -30,8 +31,10 @@ export default function ProdukHukum() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.8 }}
-        className="w-full"
-      ></motion.div>
+        className="w-full bg-white dark:bg-gray-800 shadow-lg rounded-lg overflow-x-auto p-4"
+      >
+        <ProdukHukumTable />
+      </motion.div>
     </section>
   );
 }
