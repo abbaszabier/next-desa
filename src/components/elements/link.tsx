@@ -51,9 +51,11 @@ const components: { title: string; href: string; description: string }[] = [
 ];
 
 export function Navlink() {
-  const router = usePathname();
-
-  const isActive = (href: string) => router === href;
+  const pathname = usePathname();
+  const isActive = (href: string) => {
+    if (href === "/") return pathname === "/";
+    return pathname.startsWith(href);
+  };
 
   return (
     <NavigationMenu className="flex flex-col lg:flex-1">
