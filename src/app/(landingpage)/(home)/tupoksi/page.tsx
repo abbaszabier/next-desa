@@ -23,7 +23,7 @@ export default function Tupoksi() {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="mt-4 mb-4 text-sm font-medium text-pretty text-gray-500 lg:text-xl/8"
           >
-            Tupoksi Desa Tapos I, Kecamatan Tenjolaya
+            Tugas Pokok dan Fungsi Desa Tapos I, Kecamatan Tenjolaya
           </motion.p>
         </div>
       </div>
