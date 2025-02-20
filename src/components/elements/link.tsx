@@ -157,22 +157,12 @@ export function Navlink() {
           </Link>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <Link href="/pembangunan" legacyBehavior passHref>
+          <Link href="/tupoksi" legacyBehavior passHref>
             <NavigationMenuLink
-              active={isActive("/pembangunan")}
+              active={isActive("/tupoksi")}
               className={navigationMenuTriggerStyle()}
             >
-              Pembangunan
-            </NavigationMenuLink>
-          </Link>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <Link href="/informasi" legacyBehavior passHref>
-            <NavigationMenuLink
-              active={isActive("/informasi")}
-              className={navigationMenuTriggerStyle()}
-            >
-              Informasi
+              Tupoksi
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
@@ -193,6 +183,16 @@ export function Navlink() {
               className={navigationMenuTriggerStyle()}
             >
               Berita
+            </NavigationMenuLink>
+          </Link>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
+          <Link href="/destinasi" legacyBehavior passHref>
+            <NavigationMenuLink
+              active={isActive("/destinasi")}
+              className={navigationMenuTriggerStyle()}
+            >
+              Destinasi
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>

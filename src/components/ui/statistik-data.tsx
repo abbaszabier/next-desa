@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { ChartPie, TrendingUp } from "lucide-react";
+import { ChartPie } from "lucide-react";
 import { Label, Pie, PieChart } from "recharts";
 import {
   Card,
@@ -23,10 +23,10 @@ const dataOptions = {
     title: "Data Populasi",
     description: "January - June 2024",
     chartData: [
-      { browser: "Laki-Laki", visitors: 500, fill: "var(--color-chrome)" },
-      { browser: "Perempuan", visitors: 800, fill: "var(--color-safari)" },
+      { browser: "Laki-Laki", visitors: 1293, fill: "var(--color-chrome)" },
+      { browser: "Perempuan", visitors: 4922, fill: "var(--color-safari)" },
     ],
-    total: 1300,
+    total: 6215,
   },
   pekerjaan: {
     title: "Data Pekerjaan",
@@ -77,7 +77,7 @@ const dataOptions = {
 
 const chartConfig = {
   visitors: {
-    label: "Visitors",
+    label: "Total",
   },
   chrome: {
     label: "Chrome",
@@ -88,6 +88,11 @@ const chartConfig = {
     color: "hsl(var(--chart-2))",
   },
 } satisfies ChartConfig;
+
+const colorMapping: { [key: string]: string } = {
+  "var(--color-chrome)": "bg-indigo-600",
+  "var(--color-safari)": "bg-chart-2",
+};
 
 export function StatistikData() {
   const [selectedData, setSelectedData] =
@@ -158,10 +163,22 @@ export function StatistikData() {
               </PieChart>
             </ChartContainer>
           </CardContent>
-          <CardFooter className="flex-col gap-2 text-sm">
-            <div className="flex items-center gap-2 font-medium leading-none">
-              Trending up by 5.2% this month <TrendingUp className="h-4 w-4" />
-            </div>
+          <div className="flex flex-row justify-center text-sm flex-wrap gap-2">
+            {dataOptions[selectedData].chartData.map((entry, index) => (
+              <div
+                key={index}
+                className="flex items-center gap-2 p-1 rounded-md"
+              >
+                <div
+                  className={`w-3 h-3 rounded-full ${
+                    colorMapping[entry.fill as string]
+                  }`}
+                ></div>
+                <span>{entry.browser}</span>
+              </div>
+            ))}
+          </div>
+          <CardFooter className="flex-col gap-2 text-sm mt-2">
             <div className="leading-none text-muted-foreground">
               Showing total visitors for the last 6 months
             </div>

@@ -1,10 +1,10 @@
 "use client";
 
-import { VisiMisiSection } from "@/components/ui/visi-misi-section";
 import React from "react";
 import { motion } from "framer-motion";
+import { TupoksiTable } from "./table";
 
-export default function VisiMisi() {
+export default function Tupoksi() {
   return (
     <section className="flex flex-col items-center justify-center w-full px-4 lg:px-16 py-40">
       <div className="mb-8 flex flex-col items-center justify-between md:mb-14 lg:mb-16">
@@ -15,7 +15,7 @@ export default function VisiMisi() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-4xl font-semibold tracking-tight text-balance text-gray-900 lg:text-7xl dark:text-gray-100"
           >
-            Visi dan Misi
+            Tupoksi
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -23,7 +23,7 @@ export default function VisiMisi() {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="mt-4 mb-4 text-sm font-medium text-pretty text-gray-500 lg:text-xl/8"
           >
-            Visi dan Misi Desa Tapos I, Kecamatan Tenjolaya
+            Tupoksi Desa Tapos I, Kecamatan Tenjolaya
           </motion.p>
         </div>
       </div>
@@ -31,9 +31,9 @@ export default function VisiMisi() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.8 }}
-        className="w-full"
+        className="w-full bg-white dark:bg-gray-800 shadow-lg rounded-lg overflow-x-auto p-4"
       >
-        <VisiMisiSection />
+        <TupoksiTable />
       </motion.div>
     </section>
   );

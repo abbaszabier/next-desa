@@ -10,6 +10,7 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 interface GalleryItem {
   id: string;
@@ -19,13 +20,13 @@ interface GalleryItem {
   image: string;
 }
 
-interface Gallery6Props {
+interface GaleriFotoProps {
   heading?: string;
   demoUrl?: string;
   items?: GalleryItem[];
 }
 
-export default function Gallery6({
+export default function GaleriFoto({
   heading = "Galeri Foto",
   items = [
     {
@@ -69,7 +70,7 @@ export default function Gallery6({
       image: "https://shadcnblocks.com/images/block/placeholder-dark-1.svg",
     },
   ],
-}: Gallery6Props) {
+}: GaleriFotoProps) {
   const [carouselApi, setCarouselApi] = useState<CarouselApi>();
   const [canScrollPrev, setCanScrollPrev] = useState(false);
   const [canScrollNext, setCanScrollNext] = useState(false);
@@ -89,13 +90,17 @@ export default function Gallery6({
   }, [carouselApi]);
   return (
     <section className="flex flex-col items-center justify-center py-40">
-      <div className="mb-8 flex flex-col items-center justify-between md:mb-14 lg:mb-16">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.4 }}
+        className="mb-8 flex flex-col items-center justify-between md:mb-14 lg:mb-16"
+      >
         <div className="text-center">
           <h1 className="text-4xl font-semibold tracking-tight text-balance text-gray-900 lg:text-7xl dark:text-gray-100">
             {heading}
           </h1>
           <p className="mt-4 mb-4 text-sm font-medium text-pretty text-gray-500 lg:text-xl/8">
-            {/* penjelasan galery foto */}
             Dokumentasi terbaru dari desa Tapos I, Kecamatan Tenjolaya,
           </p>
         </div>
@@ -123,8 +128,13 @@ export default function Gallery6({
             <ArrowRight className="size-5" />
           </Button>
         </div>
-      </div>
-      <div className="w-full">
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.8 }}
+        className="w-full"
+      >
         <Carousel
           setApi={setCarouselApi}
           opts={{
@@ -169,7 +179,7 @@ export default function Gallery6({
             ))}
           </CarouselContent>
         </Carousel>
-      </div>
+      </motion.div>
     </section>
   );
 }
