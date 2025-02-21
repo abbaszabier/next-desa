@@ -4,6 +4,8 @@ import { devtools, persist, createJSONStorage } from "zustand/middleware";
 interface SettingsState {
   isOpen: boolean;
   setIsOpen: (isOpen: boolean) => void;
+  installed: boolean;
+  setInstalled: (installed: boolean) => void;
 }
 
 export const useSettingsStore = create<SettingsState>()(
@@ -12,6 +14,8 @@ export const useSettingsStore = create<SettingsState>()(
       (set) => ({
         isOpen: false,
         setIsOpen: (isOpen) => set({ isOpen }),
+        installed: false,
+        setInstalled: (installed) => set({ installed }),
       }),
       {
         name: "settings-storage",
