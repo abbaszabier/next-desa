@@ -19,139 +19,55 @@ import {
 const data = {
   navMain: [
     {
-      title: "Getting Started",
-      url: "#",
-      items: [
-        {
-          title: "Installation",
-          url: "#",
-        },
-        {
-          title: "Project Structure",
-          url: "#",
-        },
-      ],
+      title: "Beranda",
+      url: "/dashboard",
     },
     {
-      title: "Building Your Application",
-      url: "#",
+      title: "Data Statistik",
+      url: "/dashboard/data-statistik",
       items: [
         {
-          title: "Routing",
-          url: "#",
+          title: "Populas",
+          url: "/dashboard/data-statistik/populasi",
         },
         {
-          title: "Data Fetching",
-          url: "#",
+          title: "Pendidikan",
+          url: "/dashboard/data-statistik/pendidikan",
           isActive: true,
         },
         {
-          title: "Rendering",
-          url: "#",
+          title: "Pekerjaan",
+          url: "/dashboard/data-statistik/pekerjaan",
         },
         {
-          title: "Caching",
-          url: "#",
+          title: "Perkawinan",
+          url: "/dashboard/data-statistik/perkawinan",
         },
         {
-          title: "Styling",
-          url: "#",
+          title: "Usia",
+          url: "/dashboard/data-statistik/usia",
         },
         {
-          title: "Optimizing",
-          url: "#",
-        },
-        {
-          title: "Configuring",
-          url: "#",
-        },
-        {
-          title: "Testing",
-          url: "#",
-        },
-        {
-          title: "Authentication",
-          url: "#",
-        },
-        {
-          title: "Deploying",
-          url: "#",
-        },
-        {
-          title: "Upgrading",
-          url: "#",
-        },
-        {
-          title: "Examples",
-          url: "#",
+          title: "Daftar Pemilih Tetap",
+          url: "/dashboard/data-statistik/dpt",
         },
       ],
     },
     {
-      title: "API Reference",
-      url: "#",
-      items: [
-        {
-          title: "Components",
-          url: "#",
-        },
-        {
-          title: "File Conventions",
-          url: "#",
-        },
-        {
-          title: "Functions",
-          url: "#",
-        },
-        {
-          title: "next.config.js Options",
-          url: "#",
-        },
-        {
-          title: "CLI",
-          url: "#",
-        },
-        {
-          title: "Edge Runtime",
-          url: "#",
-        },
-      ],
+      title: "Produk Hukum",
+      url: "/dashboard/produk-hukum",
     },
     {
-      title: "Architecture",
-      url: "#",
-      items: [
-        {
-          title: "Accessibility",
-          url: "#",
-        },
-        {
-          title: "Fast Refresh",
-          url: "#",
-        },
-        {
-          title: "Next.js Compiler",
-          url: "#",
-        },
-        {
-          title: "Supported Browsers",
-          url: "#",
-        },
-        {
-          title: "Turbopack",
-          url: "#",
-        },
-      ],
+      title: "Berita",
+      url: "/dashboard/berita",
     },
     {
-      title: "Community",
-      url: "#",
-      items: [
-        {
-          title: "Contribution Guide",
-          url: "#",
-        },
-      ],
+      title: "Destinasi",
+      url: "/dashboard/destinasi",
+    },
+    {
+      title: "Lapak Desa",
+      url: "/dashboard/lapak-desa",
     },
   ],
 };
