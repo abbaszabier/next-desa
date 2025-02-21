@@ -16,6 +16,7 @@ import {
 import { AuroraBackground } from "../ui/aurora-background";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import { useSettingsStore } from "@/store/settings";
 
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -51,6 +52,7 @@ const components: { title: string; href: string; description: string }[] = [
 ];
 
 export function Navlink() {
+  const { setIsOpen } = useSettingsStore((state) => state);
   const pathname = usePathname();
   const isActive = (href: string) => {
     if (href === "/") return pathname === "/";
@@ -209,7 +211,12 @@ export function Navlink() {
           </Link>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <div className={navigationMenuTriggerStyle()}>Hubungi Kami</div>
+          <div
+            onClick={() => setIsOpen(true)}
+            className={`cursor-pointer ${navigationMenuTriggerStyle()}`}
+          >
+            Hubungi Kami
+          </div>
         </NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>

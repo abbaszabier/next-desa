@@ -1,9 +1,10 @@
 "use client";
 
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import { X, MessageCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import { useSettingsStore } from "@/store/settings";
 
 export type ChatPosition = "bottom-right" | "bottom-left";
 export type ChatSize = "sm" | "md" | "lg" | "xl" | "full";
@@ -45,10 +46,12 @@ const ExpandableChat: React.FC<ExpandableChatProps> = ({
   children,
   ...props
 }) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const { isOpen, setIsOpen } = useSettingsStore((state) => state);
   const chatRef = useRef<HTMLDivElement>(null);
 
-  const toggleChat = () => setIsOpen(!isOpen);
+  const toggleChat = () => {
+    setIsOpen(!isOpen);
+  };
 
   return (
     <div
