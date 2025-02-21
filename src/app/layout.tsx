@@ -5,14 +5,14 @@ import { geistSans } from "@/app/styles/font";
 import Head from "next/head";
 
 export const metadata: Metadata = {
-  title: "Desa",
-  description: "Desa lorem ipsum",
+  title: "Desa Tapos I",
+  description: "Desa Tapos I, Kecamatan Tenjolaya",
   manifest: "/manifest.json",
-  applicationName: "Desa App",
+  applicationName: "Tapos I",
   appleWebApp: {
     statusBarStyle: "default",
     capable: true,
-    title: "Desa App",
+    title: "Desa Tapos I",
   },
   formatDetection: {
     telephone: false,
