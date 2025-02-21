@@ -12,65 +12,50 @@ import {
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-interface GalleryItem {
-  id: string;
-  title: string;
-  summary: string;
-  url: string;
-  image: string;
-}
+const items = [
+  {
+    id: "item-1",
+    title: "Build Modern UIs",
+    summary:
+      "Create stunning user interfaces with our comprehensive design system.",
+    url: "#",
+    image: "https://shadcnblocks.com/images/block/placeholder-dark-1.svg",
+  },
+  {
+    id: "item-2",
+    title: "Computer Vision Technology",
+    summary:
+      "Powerful image recognition and processing capabilities that allow AI systems to analyze, understand, and interpret visual information from the world.",
+    url: "#",
+    image: "https://shadcnblocks.com/images/block/placeholder-dark-1.svg",
+  },
+  {
+    id: "item-3",
+    title: "Machine Learning Automation",
+    summary:
+      "Self-improving algorithms that learn from data patterns to automate complex tasks and make intelligent decisions with minimal human intervention.",
+    url: "#",
+    image: "https://shadcnblocks.com/images/block/placeholder-dark-1.svg",
+  },
+  {
+    id: "item-4",
+    title: "Predictive Analytics",
+    summary:
+      "Advanced forecasting capabilities that analyze historical data to predict future trends and outcomes, helping businesses make data-driven decisions.",
+    url: "#",
+    image: "https://shadcnblocks.com/images/block/placeholder-dark-1.svg",
+  },
+  {
+    id: "item-5",
+    title: "Neural Network Architecture",
+    summary:
+      "Sophisticated AI models inspired by human brain structure, capable of solving complex problems through deep learning and pattern recognition.",
+    url: "#",
+    image: "https://shadcnblocks.com/images/block/placeholder-dark-1.svg",
+  },
+];
 
-interface GaleriFotoProps {
-  heading?: string;
-  demoUrl?: string;
-  items?: GalleryItem[];
-}
-
-const GaleriFoto = ({
-  heading = "Galeri Foto",
-  items = [
-    {
-      id: "item-1",
-      title: "Build Modern UIs",
-      summary:
-        "Create stunning user interfaces with our comprehensive design system.",
-      url: "#",
-      image: "https://shadcnblocks.com/images/block/placeholder-dark-1.svg",
-    },
-    {
-      id: "item-2",
-      title: "Computer Vision Technology",
-      summary:
-        "Powerful image recognition and processing capabilities that allow AI systems to analyze, understand, and interpret visual information from the world.",
-      url: "#",
-      image: "https://shadcnblocks.com/images/block/placeholder-dark-1.svg",
-    },
-    {
-      id: "item-3",
-      title: "Machine Learning Automation",
-      summary:
-        "Self-improving algorithms that learn from data patterns to automate complex tasks and make intelligent decisions with minimal human intervention.",
-      url: "#",
-      image: "https://shadcnblocks.com/images/block/placeholder-dark-1.svg",
-    },
-    {
-      id: "item-4",
-      title: "Predictive Analytics",
-      summary:
-        "Advanced forecasting capabilities that analyze historical data to predict future trends and outcomes, helping businesses make data-driven decisions.",
-      url: "#",
-      image: "https://shadcnblocks.com/images/block/placeholder-dark-1.svg",
-    },
-    {
-      id: "item-5",
-      title: "Neural Network Architecture",
-      summary:
-        "Sophisticated AI models inspired by human brain structure, capable of solving complex problems through deep learning and pattern recognition.",
-      url: "#",
-      image: "https://shadcnblocks.com/images/block/placeholder-dark-1.svg",
-    },
-  ],
-}: GaleriFotoProps) => {
+export default function GaleriFoto() {
   const [carouselApi, setCarouselApi] = useState<CarouselApi>();
   const [canScrollPrev, setCanScrollPrev] = useState(false);
   const [canScrollNext, setCanScrollNext] = useState(false);
@@ -98,7 +83,7 @@ const GaleriFoto = ({
       >
         <div className="text-center">
           <h1 className="text-4xl font-semibold tracking-tight text-balance text-gray-900 lg:text-7xl dark:text-gray-100">
-            {heading}
+            Galeri Foto
           </h1>
           <p className="mt-4 mb-4 text-sm font-medium text-pretty text-gray-500 lg:text-xl/8">
             Dokumentasi terbaru dari desa Tapos I, Kecamatan Tenjolaya,
@@ -182,6 +167,4 @@ const GaleriFoto = ({
       </motion.div>
     </section>
   );
-};
-
-export default GaleriFoto;
+}
