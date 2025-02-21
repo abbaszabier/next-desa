@@ -35,15 +35,22 @@ export function LoginForm({
                 <div className="flex items-center">
                   <Label htmlFor="password">Password</Label>
                 </div>
-                <Input id="password" type="password" required />
+                <Input
+                  id="password"
+                  type="password"
+                  required
+                  placeholder="password"
+                />
               </div>
-              <Button
-                variant="black"
-                type="submit"
-                className="w-full text-white"
-              >
-                Login
-              </Button>
+              <Link href="/dashboard">
+                <Button
+                  variant="black"
+                  type="submit"
+                  className="w-full text-white"
+                >
+                  Login
+                </Button>
+              </Link>
               <span className="text-center text-sm text-muted-foreground">
                 <Link href="/" className="underline">
                   Kembali ke Beranda
