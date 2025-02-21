@@ -2,6 +2,7 @@ import "../../globals.css";
 import Navbar from "@/components/elements/navbar";
 import Footer from "../../../components/elements/footer";
 import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-with-collision";
+import ChatSupport from "@/components/elements/chat-support";
 
 export default function RootLayout({
   children,
@@ -15,6 +16,7 @@ export default function RootLayout({
         <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
         <BackgroundBeamsWithCollision className="relative flex flex-col z-20">
           {children}
+          <ChatSupport />
         </BackgroundBeamsWithCollision>
       </div>
       <Footer />
