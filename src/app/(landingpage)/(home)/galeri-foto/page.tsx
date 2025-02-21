@@ -26,7 +26,7 @@ interface GaleriFotoProps {
   items?: GalleryItem[];
 }
 
-export default function GaleriFoto({
+const GaleriFoto = ({
   heading = "Galeri Foto",
   items = [
     {
@@ -70,7 +70,7 @@ export default function GaleriFoto({
       image: "https://shadcnblocks.com/images/block/placeholder-dark-1.svg",
     },
   ],
-}: GaleriFotoProps) {
+}: GaleriFotoProps) => {
   const [carouselApi, setCarouselApi] = useState<CarouselApi>();
   const [canScrollPrev, setCanScrollPrev] = useState(false);
   const [canScrollNext, setCanScrollNext] = useState(false);
@@ -182,4 +182,6 @@ export default function GaleriFoto({
       </motion.div>
     </section>
   );
-}
+};
+
+export default GaleriFoto;

@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <div className="relative isolate py-40 lg:py-28 px-4">
+    <div className="py-40 lg:py-28 px-4">
       <div className="mx-auto max-w-2xl">
         <motion.div
           className="mb-8 flex justify-center"

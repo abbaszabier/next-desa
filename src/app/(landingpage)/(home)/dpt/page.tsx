@@ -2,6 +2,8 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import { Card, CardContent } from "@/components/ui/card";
+import { DptTable } from "./table";
 
 export default function Dpt() {
   return (
@@ -31,7 +33,13 @@ export default function Dpt() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.8 }}
         className="w-full"
-      ></motion.div>
+      >
+        <Card className="flex flex-col rounded-2xl">
+          <CardContent className="flex-1 pb-0 space-y-10">
+            <DptTable />
+          </CardContent>
+        </Card>
+      </motion.div>
     </section>
   );
 }

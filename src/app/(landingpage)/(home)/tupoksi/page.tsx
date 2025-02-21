@@ -23,7 +23,7 @@ export default function Tupoksi() {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="mt-4 mb-4 text-sm font-medium text-pretty text-gray-500 lg:text-xl/8"
           >
-            Tupoksi Desa Tapos I, Kecamatan Tenjolaya
+            Tugas Pokok dan Fungsi Desa Tapos I, Kecamatan Tenjolaya
           </motion.p>
         </div>
       </div>
@@ -31,7 +31,7 @@ export default function Tupoksi() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.8 }}
-        className="w-full bg-white dark:bg-gray-800 shadow-lg rounded-lg overflow-x-auto p-4"
+        className="w-full bg-white dark:bg-gray-800 border rounded-2xl overflow-x-auto p-4"
       >
         <TupoksiTable />
       </motion.div>
