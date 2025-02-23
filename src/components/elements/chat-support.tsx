@@ -39,6 +39,12 @@ export default function ChatSupport() {
       </ExpandableChatHeader>
       <ExpandableChatBody>
         <ChatMessageList>
+          <ChatBubble variant="received">
+            <ChatBubbleAvatar src="" fallback="A" />
+            <ChatBubbleMessage variant="received">
+              Halo, ada yang bisa kami bantu?
+            </ChatBubbleMessage>
+          </ChatBubble>
           {messages.map((message, index) => (
             <ChatBubble
               key={index}
@@ -46,7 +52,7 @@ export default function ChatSupport() {
             >
               <ChatBubbleAvatar
                 src=""
-                fallback={message.role === "user" ? "US" : "AI"}
+                fallback={message.role === "user" ? "U" : "A"}
               />
               <ChatBubbleMessage
                 variant={message.role === "user" ? "sent" : "received"}
