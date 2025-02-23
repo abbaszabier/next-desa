@@ -13,7 +13,7 @@ import {
   getSortedRowModel,
   useReactTable,
 } from "@tanstack/react-table";
-import { ArrowUpDown, ChevronDown, MoreHorizontal } from "lucide-react";
+import { ChevronDown, MoreHorizontal } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -34,90 +34,106 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import Link from "next/link";
 
-const data: Payment[] = [
+const data: LegalProduct[] = [
   {
-    id: "m5gr84i9",
-    amount: 316,
-    status: "success",
-    email: "ken99@yahoo.com",
+    id: "prd-001",
+    title: "Peraturan Desa tentang Pengelolaan Sampah",
+    year: 2023,
+    status: "active",
+    pdfUrl: "/files/peraturan-sampah.pdf",
   },
   {
-    id: "3u1reuv4",
-    amount: 242,
-    status: "success",
-    email: "Abe45@gmail.com",
+    id: "prd-002",
+    title: "Peraturan Desa tentang Dana Desa",
+    year: 2022,
+    status: "inactive",
+    pdfUrl: "",
   },
   {
-    id: "derv1ws0",
-    amount: 837,
-    status: "processing",
-    email: "Monserrat44@gmail.com",
+    id: "prd-003",
+    title: "Peraturan Desa tentang Pembangunan Infrastruktur",
+    year: 2021,
+    status: "active",
+    pdfUrl: "/files/peraturan-infrastruktur.pdf",
   },
   {
-    id: "5kma53ae",
-    amount: 874,
-    status: "success",
-    email: "Silas22@gmail.com",
+    id: "prd-004",
+    title: "Peraturan Desa tentang Perlindungan Anak",
+    year: 2023,
+    status: "draft",
+    pdfUrl: "",
   },
   {
-    id: "bhqecj4p",
-    amount: 721,
-    status: "failed",
-    email: "carmella@hotmail.com",
+    id: "prd-005",
+    title: "Peraturan Desa tentang BUMDes",
+    year: 2020,
+    status: "active",
+    pdfUrl: "/files/peraturan-bumdes.pdf",
   },
 ];
 
-export type Payment = {
+export type LegalProduct = {
   id: string;
-  amount: number;
-  status: "pending" | "processing" | "success" | "failed";
-  email: string;
+  title: string;
+  year: number;
+  status: "draft" | "active" | "inactive";
+  pdfUrl: string;
 };
 
-export const columns: ColumnDef<Payment>[] = [
+export const columns: ColumnDef<LegalProduct>[] = [
+  {
+    accessorKey: "title",
+    header: "Judul Produk Hukum",
+    cell: ({ row }) => <div>{row.getValue("title")}</div>,
+  },
+  {
+    accessorKey: "year",
+    header: "Tahun",
+    cell: ({ row }) => <div className="text-left">{row.getValue("year")}</div>,
+  },
   {
     accessorKey: "status",
     header: "Status",
     cell: ({ row }) => (
-      <div className="capitalize">{row.getValue("status")}</div>
+      <div
+        className={`capitalize ${
+          row.getValue("status") === "active"
+            ? "text-green-500"
+            : row.getValue("status") === "inactive"
+            ? "text-red-500"
+            : "text-gray-500"
+        }`}
+      >
+        {row.getValue("status")}
+      </div>
     ),
   },
   {
-    accessorKey: "email",
-    header: ({ column }) => {
-      return (
-        <Button
-          variant="ghost"
-          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-        >
-          Email
-          <ArrowUpDown />
-        </Button>
-      );
-    },
-    cell: ({ row }) => <div className="lowercase">{row.getValue("email")}</div>,
-  },
-  {
-    accessorKey: "amount",
-    header: () => <div className="text-right">Amount</div>,
+    accessorKey: "pdfUrl",
+    header: "Dokumen PDF",
     cell: ({ row }) => {
-      const amount = parseFloat(row.getValue("amount"));
-
-      // Format the amount as a dollar amount
-      const formatted = new Intl.NumberFormat("en-US", {
-        style: "currency",
-        currency: "USD",
-      }).format(amount);
-
-      return <div className="text-right font-medium">{formatted}</div>;
+      const pdfUrl = row.getValue("pdfUrl");
+      return pdfUrl ? (
+        <Link
+          href={pdfUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-blue-500 underline"
+        >
+          Unduh PDF
+        </Link>
+      ) : (
+        <span className="text-gray-400">Tidak tersedia</span>
+      );
     },
   },
   {
     id: "actions",
     enableHiding: false,
     cell: ({ row }) => {
-      const payment = row.original;
+      const legalProduct = row.original;
 
       return (
         <DropdownMenu>
@@ -130,13 +146,12 @@ export const columns: ColumnDef<Payment>[] = [
           <DropdownMenuContent align="end">
             <DropdownMenuLabel>Actions</DropdownMenuLabel>
             <DropdownMenuItem
-              onClick={() => navigator.clipboard.writeText(payment.id)}
+              onClick={() => navigator.clipboard.writeText(legalProduct.id)}
             >
-              Copy payment ID
+              Copy ID Produk
             </DropdownMenuItem>
             <DropdownMenuSeparator />
-            <DropdownMenuItem>View customer</DropdownMenuItem>
-            <DropdownMenuItem>View payment details</DropdownMenuItem>
+            <DropdownMenuItem>Lihat Detail</DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
       );
@@ -176,10 +191,10 @@ export function ProdukHukumTable() {
     <div className="w-full">
       <div className="flex items-center py-4">
         <Input
-          placeholder="Filter emails..."
-          value={(table.getColumn("email")?.getFilterValue() as string) ?? ""}
+          placeholder="Filter produk hukum..."
+          value={(table.getColumn("title")?.getFilterValue() as string) ?? ""}
           onChange={(event) =>
-            table.getColumn("email")?.setFilterValue(event.target.value)
+            table.getColumn("title")?.setFilterValue(event.target.value)
           }
           className="max-w-sm"
         />
