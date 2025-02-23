@@ -12,6 +12,8 @@ import {
 } from "@/components/ui/breadcrumb";
 import { usePathname } from "next/navigation";
 import { data } from "@/components/elements/app-sidebar";
+import { ProfileDropdown } from "@/app/dashboard/(home)/components/profile-dropdown";
+import DateTime from "../ui/datetime";
 
 interface NavItem {
   title: string;
@@ -41,27 +43,33 @@ export default function HeaderDashboard() {
 
   return (
     <header className="flex h-16 shrink-0 items-center gap-2 border-b">
-      <div className="flex items-center gap-2 px-3">
-        <SidebarTrigger />
-        <Separator orientation="vertical" className="mr-2 h-4" />
-        <Breadcrumb>
-          <BreadcrumbList>
-            {breadcrumbs.map((crumb, index) => (
-              <React.Fragment key={crumb.url}>
-                <BreadcrumbItem>
-                  {index === breadcrumbs.length - 1 ? (
-                    <BreadcrumbPage>{crumb.title}</BreadcrumbPage>
-                  ) : (
-                    <BreadcrumbLink href={crumb.url}>
-                      {crumb.title}
-                    </BreadcrumbLink>
-                  )}
-                </BreadcrumbItem>
-                {index < breadcrumbs.length - 1 && <BreadcrumbSeparator />}
-              </React.Fragment>
-            ))}
-          </BreadcrumbList>
-        </Breadcrumb>
+      <div className="flex items-center justify-between w-full pr-4">
+        <div className="flex gap-2 px-3 items-center">
+          <SidebarTrigger />
+          <Separator orientation="vertical" className="mr-2 h-4" />
+          <Breadcrumb>
+            <BreadcrumbList>
+              {breadcrumbs.map((crumb, index) => (
+                <React.Fragment key={crumb.url}>
+                  <BreadcrumbItem>
+                    {index === breadcrumbs.length - 1 ? (
+                      <BreadcrumbPage>{crumb.title}</BreadcrumbPage>
+                    ) : (
+                      <BreadcrumbLink href={crumb.url}>
+                        {crumb.title}
+                      </BreadcrumbLink>
+                    )}
+                  </BreadcrumbItem>
+                  {index < breadcrumbs.length - 1 && <BreadcrumbSeparator />}
+                </React.Fragment>
+              ))}
+            </BreadcrumbList>
+          </Breadcrumb>
+        </div>
+        <div className="flex gap-2 items-center">
+          <DateTime className="text-sm" />
+          <ProfileDropdown />
+        </div>
       </div>
     </header>
   );
