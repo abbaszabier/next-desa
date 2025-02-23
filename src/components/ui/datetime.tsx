@@ -3,7 +3,11 @@
 import { useRealtimeDateTime } from "@/hooks";
 import { useState, useEffect } from "react";
 
-const DateTime = () => {
+interface DateTimeProps {
+  className?: string;
+}
+
+const DateTime = ({ className }: DateTimeProps) => {
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
@@ -28,7 +32,9 @@ const DateTime = () => {
     : "Loading...";
 
   return (
-    <div className="text-base dark:text-gray-100 font-normal text-gray-700">
+    <div
+      className={`text-base dark:text-gray-100 font-normal text-gray-700 ${className}`}
+    >
       {formattedDateTime}
     </div>
   );
