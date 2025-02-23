@@ -15,7 +15,7 @@ export default function Galeri() {
         <h2 className="flex items-center gap-2 text-xl lg:text-2xl font-bold text-gray-900 dark:text-gray-100">
           <Images /> Galeri Foto
         </h2>
-        <button className="flex items-center gap-1 text-xs text-indigo-600 dark:text-indigo-400">
+        <button className="flex items-center gap-1 text-xs text-primary dark:text-primary">
           Lihat Semua <ArrowRight size={14} />
         </button>
       </div>

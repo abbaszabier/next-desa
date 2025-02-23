@@ -15,7 +15,7 @@ export default function Hero() {
         >
           <div className="relative rounded-full px-3 py-1 text-xs lg:text-sm/6 text-gray-500 bg-white/30 backdrop-blur-xl dark:bg-black/50 dark:bg-opacity-80 ring-1 ring-gray-900/10 hover:ring-gray-900/20 dark:ring-gray-100/10 dark:hover:ring-gray-100/20">
             Selamat datang di{" "}
-            <span className="font-semibold text-indigo-600">
+            <span className="font-bold text-primary">
               website resmi kami 👋🏼
             </span>
           </div>
@@ -29,7 +29,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             Layanan Informasi Desa{" "}
-            <span className="font-semibold text-indigo-600">Tapos I</span>{" "}
+            <span className="font-semibold text-primary">Tapos I</span>{" "}
           </motion.h1>
           <motion.p
             className="mt-6 text-sm font-medium text-gray-500 lg:text-xl/8 dark:text-gray-300"
