@@ -73,11 +73,10 @@ const InstallPrompt = () => {
           </DialogHeader>
           <div className="flex flex-col items-center">
             <Image
+              src="/images/icons/icon-96x96.png"
               width={40}
               height={40}
-              alt="Desa Apps"
-              className="w-12 h-12 mx-auto"
-              src="/images/icons/icon-96x96.png"
+              alt="Logo"
             />
             <h2 className="text-black text-lg font-semibold mt-2">
               Install Desa Tapos I

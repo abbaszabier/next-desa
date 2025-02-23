@@ -26,7 +26,7 @@ interface FooterProps {
 
 export default function Footer({
   logo = {
-    src: "/images/icons/icon-128x128.png",
+    src: "/images/icons/icon-96x96.png",
     alt: "blocks for shadcn/ui",
     title: "",
     url: "https://www.shadcnblocks.com",
@@ -51,9 +51,8 @@ export default function Footer({
                 src={logo.src}
                 alt={logo.alt}
                 title={logo.title}
-                className="h-12 w-12"
-                width={60}
-                height={60}
+                width={40}
+                height={40}
               />
             </a>
             <p className="text-xl font-semibold">{logo.title}</p>

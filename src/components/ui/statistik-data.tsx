@@ -90,7 +90,7 @@ const chartConfig = {
 } satisfies ChartConfig;
 
 const colorMapping: { [key: string]: string } = {
-  "var(--color-chrome)": "bg-indigo-600",
+  "var(--color-chrome)": "bg-primary",
   "var(--color-safari)": "bg-chart-2",
 };
 
@@ -197,7 +197,7 @@ export function StatistikData() {
                   className={`flex items-center gap-3 px-4 py-3 rounded-lg cursor-pointer transition duration-300
             ${
               isActive
-                ? "bg-[#7441E0] text-white shadow-md"
+                ? "bg-primary text-white shadow-md font-bold"
                 : "bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700"
             }
           `}

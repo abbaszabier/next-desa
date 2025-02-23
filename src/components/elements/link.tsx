@@ -79,7 +79,7 @@ export function Navlink() {
               isActive("/visi-misi") ||
               isActive("/peta") ||
               isActive("/galeri-foto")
-                ? "text-indigo-600"
+                ? "text-primary font-bold"
                 : ""
             }`}
           >
@@ -130,7 +130,7 @@ export function Navlink() {
               isActive("/perkawinan") ||
               isActive("/usia") ||
               isActive("/dpt")
-                ? "text-indigo-600"
+                ? "text-primary font-bold"
                 : ""
             }`}
           >
