@@ -13,7 +13,7 @@ import {
   getSortedRowModel,
   useReactTable,
 } from "@tanstack/react-table";
-import { ArrowUpDown, ChevronDown, MoreHorizontal } from "lucide-react";
+import { ChevronDown, MoreHorizontal } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -35,89 +35,79 @@ import {
   TableRow,
 } from "@/components/ui/table";
 
-const data: Payment[] = [
+const data: Tupoksi[] = [
   {
-    id: "m5gr84i9",
-    amount: 316,
-    status: "success",
-    email: "ken99@yahoo.com",
+    id: "1",
+    jabatan: "Kepala Desa",
+    tugas:
+      "Memimpin penyelenggaraan pemerintahan desa, pembangunan, pembinaan kemasyarakatan, dan pemberdayaan masyarakat desa.",
+    fungsi:
+      "Mengkoordinasikan seluruh perangkat desa dalam menjalankan tugas pemerintahan dan pembangunan.",
   },
   {
-    id: "3u1reuv4",
-    amount: 242,
-    status: "success",
-    email: "Abe45@gmail.com",
+    id: "2",
+    jabatan: "Sekretaris Desa",
+    tugas:
+      "Membantu Kepala Desa dalam bidang administrasi pemerintahan desa serta mengkoordinasikan pelaksanaan tugas perangkat desa lainnya.",
+    fungsi:
+      "Mengelola administrasi desa dan menyusun laporan penyelenggaraan pemerintahan desa.",
   },
   {
-    id: "derv1ws0",
-    amount: 837,
-    status: "processing",
-    email: "Monserrat44@gmail.com",
+    id: "3",
+    jabatan: "Bendahara Desa",
+    tugas:
+      "Mengelola keuangan desa, termasuk penerimaan, penyimpanan, pengeluaran, dan pertanggungjawaban keuangan desa.",
+    fungsi:
+      "Menjaga transparansi dan akuntabilitas dalam pengelolaan anggaran desa.",
   },
   {
-    id: "5kma53ae",
-    amount: 874,
-    status: "success",
-    email: "Silas22@gmail.com",
+    id: "4",
+    jabatan: "Kasi Pemerintahan",
+    tugas:
+      "Melaksanakan urusan pemerintahan, ketertiban, dan pelayanan administrasi di desa.",
+    fungsi:
+      "Membantu Kepala Desa dalam penyelenggaraan pemerintahan desa serta ketertiban umum.",
   },
   {
-    id: "bhqecj4p",
-    amount: 721,
-    status: "failed",
-    email: "carmella@hotmail.com",
+    id: "5",
+    jabatan: "Kasi Pelayanan",
+    tugas:
+      "Menyelenggarakan pelayanan kepada masyarakat dalam berbagai bidang sesuai dengan tugasnya.",
+    fungsi:
+      "Menjamin terselenggaranya pelayanan publik yang efektif dan efisien.",
   },
 ];
 
-export type Payment = {
+export type Tupoksi = {
   id: string;
-  amount: number;
-  status: "pending" | "processing" | "success" | "failed";
-  email: string;
+  jabatan: string;
+  tugas: string;
+  fungsi: string;
 };
 
-export const columns: ColumnDef<Payment>[] = [
+export const columns: ColumnDef<Tupoksi>[] = [
   {
-    accessorKey: "status",
-    header: "Status",
+    accessorKey: "jabatan",
+    header: "Jabatan",
     cell: ({ row }) => (
-      <div className="capitalize">{row.getValue("status")}</div>
+      <div className="font-medium">{row.getValue("jabatan")}</div>
     ),
   },
   {
-    accessorKey: "email",
-    header: ({ column }) => {
-      return (
-        <Button
-          variant="ghost"
-          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-        >
-          Email
-          <ArrowUpDown />
-        </Button>
-      );
-    },
-    cell: ({ row }) => <div className="lowercase">{row.getValue("email")}</div>,
+    accessorKey: "tugas",
+    header: "Tugas dan Fungsi",
+    cell: ({ row }) => <div>{row.getValue("tugas")}</div>,
   },
   {
-    accessorKey: "amount",
-    header: () => <div className="text-right">Amount</div>,
-    cell: ({ row }) => {
-      const amount = parseFloat(row.getValue("amount"));
-
-      // Format the amount as a dollar amount
-      const formatted = new Intl.NumberFormat("en-US", {
-        style: "currency",
-        currency: "USD",
-      }).format(amount);
-
-      return <div className="text-right font-medium">{formatted}</div>;
-    },
+    accessorKey: "fungsi",
+    header: "Fungsi",
+    cell: ({ row }) => <div>{row.getValue("fungsi")}</div>,
   },
   {
     id: "actions",
     enableHiding: false,
     cell: ({ row }) => {
-      const payment = row.original;
+      const tupoksi = row.original;
 
       return (
         <DropdownMenu>
@@ -130,13 +120,12 @@ export const columns: ColumnDef<Payment>[] = [
           <DropdownMenuContent align="end">
             <DropdownMenuLabel>Actions</DropdownMenuLabel>
             <DropdownMenuItem
-              onClick={() => navigator.clipboard.writeText(payment.id)}
+              onClick={() => navigator.clipboard.writeText(tupoksi.jabatan)}
             >
-              Copy payment ID
+              Copy Jabatan
             </DropdownMenuItem>
             <DropdownMenuSeparator />
-            <DropdownMenuItem>View customer</DropdownMenuItem>
-            <DropdownMenuItem>View payment details</DropdownMenuItem>
+            <DropdownMenuItem>View Details</DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
       );
@@ -176,10 +165,10 @@ export function TupoksiTable() {
     <div className="w-full">
       <div className="flex items-center py-4">
         <Input
-          placeholder="Filter emails..."
-          value={(table.getColumn("email")?.getFilterValue() as string) ?? ""}
+          placeholder="Filter jabatan..."
+          value={(table.getColumn("jabatan")?.getFilterValue() as string) ?? ""}
           onChange={(event) =>
-            table.getColumn("email")?.setFilterValue(event.target.value)
+            table.getColumn("jabatan")?.setFilterValue(event.target.value)
           }
           className="max-w-sm"
         />
