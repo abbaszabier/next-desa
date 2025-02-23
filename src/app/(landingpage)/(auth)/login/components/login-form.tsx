@@ -60,11 +60,11 @@ export function LoginForm({
           </form>
           <div className="relative hidden bg-muted md:block">
             <Image
-              src="https://shadcnblocks.com/images/block/placeholder-dark-1.svg"
-              alt="Image"
-              height={0}
-              width={0}
-              className="absolute inset-0 h-full w-full object-cover dark:brightness-[0.2] dark:grayscale"
+              src="/images/icons/icon-512x512.png"
+              width={256}
+              height={256}
+              alt="Logo"
+              className="object-cover w-full h-full p-10"
             />
           </div>
         </CardContent>
