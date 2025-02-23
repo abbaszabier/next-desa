@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   formatDetection: {
     telephone: false,
   },
-  icons: "/images/icons/icon-192x192.png",
+  icons: "/images/icons/icon-72x72.png",
 };
 
 export const viewport: Viewport = {
