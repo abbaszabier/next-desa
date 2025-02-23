@@ -1,5 +1,5 @@
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
-import { Overview } from "../../../components/elements/overview";
+import { Overview } from "./components/overview";
 
 export default function Home() {
   return (
